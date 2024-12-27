@@ -690,6 +690,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 6VFR63B9QM;
 				ENABLE_BITCODE = NO;
+				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.16.5-stable/arm64";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -828,6 +829,7 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6VFR63B9QM;
 				ENABLE_BITCODE = NO;
+				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.16.5-stable/arm64";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -835,10 +837,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.happychatyyds.apps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.happy.meng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dev_xuliao_100_20240509;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dis_241226_nixi;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -862,6 +864,7 @@
 				DEVELOPMENT_TEAM = 6VFR63B9QM;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A73VAZ2R2Q;
 				ENABLE_BITCODE = NO;
+				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.16.5-stable/arm64";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -869,9 +872,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ios.2023ailianrenchat.com;
+				PRODUCT_BUNDLE_IDENTIFIER = com.happy.meng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = AI_Chat_Dis_20240202;
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = dis_241226_nixi;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
