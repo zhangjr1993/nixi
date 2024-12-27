@@ -26,7 +26,7 @@ jobs:
       - name: Build iOS
         run: |
           cd ios
-          xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -sdk iphoneos BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release
           cd ..
          
        # 清除 Xcode 缓存
