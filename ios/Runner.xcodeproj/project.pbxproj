@@ -690,6 +690,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 6VFR63B9QM;
 				ENABLE_BITCODE = NO;
+				FLUTTER_APPLICATION_PATH = /Users/runner/work/nixi/nixi;
 				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.16.5-stable/arm64";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -829,6 +830,7 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 6VFR63B9QM;
 				ENABLE_BITCODE = NO;
+				FLUTTER_APPLICATION_PATH = /Users/runner/work/nixi/nixi;
 				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.16.5-stable/arm64";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -864,6 +866,7 @@
 				DEVELOPMENT_TEAM = 6VFR63B9QM;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A73VAZ2R2Q;
 				ENABLE_BITCODE = NO;
+				FLUTTER_APPLICATION_PATH = /Users/runner/work/nixi/nixi;
 				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.16.5-stable/arm64";
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
