@@ -23,11 +23,11 @@ jobs:
           flutter clean
           flutter pub get
           
-#      - name: Build iOS
-#        run: |
-#          cd ios
-#          xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -sdk iphoneos BUILD_LIBRARY_FOR_DISTRIBUTION=YES
-#          cd ..
+      - name: Build iOS
+        run: |
+          cd ios
+          xcodebuild -workspace Runner.xcworkspace -scheme Runner2 -configuration Release -sdk iphoneos BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          cd ..
          
        # 清除 Xcode 缓存
       - name: Clean Xcode Cache
