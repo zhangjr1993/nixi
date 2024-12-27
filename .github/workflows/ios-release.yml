@@ -21,14 +21,7 @@ jobs:
         run: |
           flutter clean
           flutter pub get
-          
-          echo "============= Environment Variables ============="
-          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
-          FLUTTER_ROOT=$(which flutter | xargs dirname | xargs dirname)
-          echo "FLUTTER_ROOT: $FLUTTER_ROOT"
-          echo "FLUTTER_APPLICATION_PATH: $GITHUB_WORKSPACE"
-          echo "Current Directory: $(pwd)"
-          
+         
        # 清除 Xcode 缓存
       - name: Clean Xcode Cache
         run: |
@@ -45,14 +38,14 @@ jobs:
       #     pod install --repo-update
           
       # 添加详细的环境信息调试步骤
-#       - name: Print Environment Info
-#         run: |
-##           echo "============= Environment Variables ============="
-##           echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
-##           FLUTTER_ROOT=$(which flutter | xargs dirname | xargs dirname)
-##           echo "FLUTTER_ROOT: $FLUTTER_ROOT"
-##           echo "FLUTTER_APPLICATION_PATH: $GITHUB_WORKSPACE"
-##           echo "Current Directory: $(pwd)"
+      - name: Print Environment Info
+        run: |
+          echo "============= Environment Variables ============="
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          FLUTTER_ROOT=$(which flutter | xargs dirname | xargs dirname)
+          echo "FLUTTER_ROOT: $FLUTTER_ROOT"
+          echo "FLUTTER_APPLICATION_PATH: $GITHUB_WORKSPACE"
+          echo "Current Directory: $(pwd)"
 
 
       - uses: cedvdb/action-flutter-build-ios@v1
