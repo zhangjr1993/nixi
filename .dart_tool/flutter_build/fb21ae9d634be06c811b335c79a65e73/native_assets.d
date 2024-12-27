@@ -1,0 +1,1 @@
+ /Users/tmp/solong/aichatgenie/.dart_tool/flutter_build/fb21ae9d634be06c811b335c79a65e73/native_assets.yaml: 
