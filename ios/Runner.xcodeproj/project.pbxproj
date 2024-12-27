@@ -828,7 +828,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = N3YK37UY32;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = J28N784UX7;
 				ENABLE_BITCODE = NO;
 				FLUTTER_APPLICATION_PATH = /Users/runner/work/nixi/nixi;
 				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.16.5-stable/arm64";
@@ -863,8 +863,8 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = 6VFR63B9QM;
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = N3YK37UY32;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = J28N784UX7;
 				ENABLE_BITCODE = NO;
 				FLUTTER_APPLICATION_PATH = /Users/runner/work/nixi/nixi;
 				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.16.5-stable/arm64";
