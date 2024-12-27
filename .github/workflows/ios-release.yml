@@ -16,37 +16,18 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: '3.16.5'
-          
-      - name: Setup Xcode
-        uses: maxim-lobanov/setup-xcode@v1
-        with:
-          xcode-version: latest-stable
-          
-      - name: Make schemes shared
-        run: |
-          cd ios
-          xcodebuild -resolvePackageDependencies
-          xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -allowProvisioningUpdates
-          cd ..
-          
-      - name: Pod install
-        run: |
-          cd ios
-          rm -rf Pods
-          rm -rf Podfile.lock
-          pod install --repo-update
-          cd ..
-          
-      - name: Build iOS
-        run: |
-          flutter clean
-          flutter pub get
-          flutter build ios --release --no-codesign
+        
     
       - name: Setup Flutter Environment
         run: |
           flutter clean
           flutter pub get
+          
+      - name: Build iOS
+        run: |
+          cd ios
+          xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -sdk iphoneos BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          cd ..
          
        # 清除 Xcode 缓存
       - name: Clean Xcode Cache
