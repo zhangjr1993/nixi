@@ -23,19 +23,39 @@ jobs:
           flutter clean
           flutter pub get
           
+      # 添加 scheme 检查步骤
+      - name: List Available Schemes
+        run: |
+          cd ios
+          xcodebuild -list -workspace Runner.xcworkspace
+          
+      # 准备构建环境
+      - name: Prepare Build Environment
+        run: |
+          cd ios
+          pod install
+          
       - name: Build iOS
         run: |
           cd ios
-          xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -sdk iphoneos BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          # 使用完整的 scheme 路径
+          xcodebuild -workspace Runner.xcworkspace \
+            -scheme Runner \
+            -configuration Release \
+            -sdk iphoneos \
+            clean archive \
+            -archivePath build/Runner.xcarchive \
+            BUILD_LIBRARY_FOR_DISTRIBUTION=YES
           cd ..
          
-       # 清除 Xcode 缓存
+      # 清除 Xcode 缓存
       - name: Clean Xcode Cache
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData
           rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport
           rm -rf ~/Library/Developer/Xcode/Archives
           rm -rf ~/Library/Developer/Xcode/Products
+          
       # 设置 CocoaPods
       # - name: Setup CocoaPods
       #   run: |
