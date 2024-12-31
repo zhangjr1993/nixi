@@ -78,6 +78,29 @@ jobs:
         with:
           name: release-ipa
           path: build/ios/ipa
+          
+      - name: Check IPA Path
+        run: |
+          echo "=================== IPA Location Check ==================="
+          echo "Checking build/ios directory:"
+          ls -R build/ios/
+          
+          echo "\nChecking for IPA files in build directory:"
+          find build -name "*.ipa" -type f
+          
+          echo "\nChecking specific paths:"
+          for path in \
+            "build/ios/ipa" \
+            "build/ios/archive/Runner.xcarchive/Products/Applications" \
+            "build/ios/Release-iphoneos"
+          do
+            echo "\nChecking $path:"
+            if [ -d "$path" ]; then
+              ls -la "$path"
+            else
+              echo "Directory does not exist: $path"
+            fi
+          done
 
           
       # - name: Upload using iTMSTransporter
@@ -92,12 +115,36 @@ jobs:
       #     git clone https://github.com/ZhangLi1984/itsm.git
       #     ./itsm/bin/iTMSTransporter -assetFile $IPA_FILE_NAME -u $APPLE_USERNAME -p $APPLE_PASSWORD -m upload -asc_provider $APPLE_ASC_PROVIDER -v verbose
 
+#      - name: Upload to App Store using altool
+#        env:
+#          IPA_PATH: "build/ios/ipa/1231nixi_b1.ipa"
+#          APPLE_ID: "happym1224@163.com"
+#          APP_SPECIFIC_PASSWORD: "twss-wqfs-vboc-esng"
+#        run: |
+#          xcrun altool --upload-app -f "$IPA_PATH" \
+#            -t ios \
+#            -u "$APPLE_ID" \
+#            -p "$APP_SPECIFIC_PASSWORD" \
+#            --verbose
+
       - name: Upload to App Store using altool
         env:
-          IPA_PATH: "build/ios/ipa/1231nixi_b1.ipa"
           APPLE_ID: "happym1224@163.com"
           APP_SPECIFIC_PASSWORD: "twss-wqfs-vboc-esng"
         run: |
+          # 首先找到 IPA 文件
+          IPA_PATH=$(find build -name "*.ipa" -type f | head -n 1)
+          
+          if [ -z "$IPA_PATH" ]; then
+            echo "Error: No IPA file found!"
+            exit 1
+          fi
+          
+          echo "Found IPA at: $IPA_PATH"
+          echo "IPA file details:"
+          ls -l "$IPA_PATH"
+          
+          echo "Attempting to upload IPA..."
           xcrun altool --upload-app -f "$IPA_PATH" \
             -t ios \
             -u "$APPLE_ID" \
