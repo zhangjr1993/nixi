@@ -23,11 +23,6 @@ jobs:
           flutter clean
           flutter pub get
      
-#      - name: Regenerate iOS project
-#        run: |
-#          cd ios
-#          pod install
-#          cd ..
           
       # 清除 Xcode 缓存
       - name: Clean Xcode Cache
@@ -38,13 +33,13 @@ jobs:
           rm -rf ~/Library/Developer/Xcode/Products
                 
           
-      # 设置 CocoaPods
-      # - name: Setup CocoaPods
-      #   run: |
-      #     cd ios
-      #     rm -rf Pods
-      #     rm -f Podfile.lock
-      #     pod install --repo-update
+     # 设置 CocoaPods
+      - name: Setup CocoaPods
+         run: |
+           cd ios
+           rm -rf Pods
+           rm -f Podfile.lock
+           pod install --repo-update
           
       # 添加详细的环境信息调试步骤
       - name: Print Environment Info
