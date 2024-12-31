@@ -1,0 +1,31 @@
+PODS:
+  - Flutter (1.0.0)
+  - HandyJSON (5.0.2)
+  - IQKeyboardManagerSwift (6.5.16)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - HandyJSON
+  - IQKeyboardManagerSwift (~> 6.5.12)
+  - SnapKit (~> 5.6.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - HandyJSON
+    - IQKeyboardManagerSwift
+    - SnapKit
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
+  IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: 8fa5f5e0970b74fb74b6e5544b9a1423877ce236
+
+COCOAPODS: 1.16.2
