@@ -22,25 +22,21 @@ jobs:
         run: |
           flutter clean
           flutter pub get
-         
-       # 清除 Xcode 缓存
+     
+      - name: Regenerate iOS project
+        run: |
+          cd ios
+          pod install
+          cd ..
+          
+      # 清除 Xcode 缓存
       - name: Clean Xcode Cache
         run: |
           rm -rf ~/Library/Developer/Xcode/DerivedData
           rm -rf ~/Library/Developer/Xcode/iOS\ DeviceSupport
           rm -rf ~/Library/Developer/Xcode/Archives
           rm -rf ~/Library/Developer/Xcode/Products
-          
-          
-#      - name: Regenerate iOS project
-#        run: |
-#          rm -rf ios/
-#          flutter create . --platforms=ios
-#          cd ios
-#          pod install
-#          # 确保scheme是共享的
-#          xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release -allowProvisioningUpdates
-#          cd ..
+                
           
       # 设置 CocoaPods
       # - name: Setup CocoaPods
