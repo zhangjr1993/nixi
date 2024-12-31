@@ -58,6 +58,24 @@ jobs:
           echo "FLUTTER_ROOT: $FLUTTER_ROOT"
           echo "FLUTTER_APPLICATION_PATH: $GITHUB_WORKSPACE"
           echo "Current Directory: $(pwd)"
+          ls -la ios/
+          echo "Xcode Version:"
+          xcodebuild -version
+          echo "CocoaPods Version:"
+          pod --version
+          
+      # 预构建检查
+      - name: Pre-build Validation
+        run: |
+          cd ios
+          xcodebuild clean -workspace Runner.xcworkspace -scheme Runner
+
+      # Flutter 构建前的准备
+      - name: Flutter Build Preparation
+        run: |
+          flutter build ios --release --no-codesign
+          cd ios
+          xcodebuild -workspace Runner.xcworkspace -scheme Runner -configuration Release ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO -quiet
 
 
       - uses: cedvdb/action-flutter-build-ios@v1
