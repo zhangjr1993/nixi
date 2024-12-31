@@ -39,14 +39,14 @@ jobs:
           rm -rf Flutter/Flutter.podspec
 
           
-     # 设置 CocoaPods
+      # 设置 CocoaPods
       - name: Setup CocoaPods
          run: |
-          cd ios
-          pod deintegrate
-          pod cache clean --all
-          pod setup
-          pod install --repo-update --verbose
+           cd ios
+           pod deintegrate
+           pod cache clean --all
+           pod setup
+           pod install --repo-update --verbose
 
           
       # 添加详细的环境信息调试步骤
