@@ -94,7 +94,7 @@ jobs:
 
       - name: Upload to App Store using altool
         env:
-          IPA_PATH: "build/ios/ipa/觅喜.ipa"
+          IPA_PATH: "build/ios/ipa/1231nixi_b1.ipa"
           APPLE_ID: "happym1224@163.com"
           APP_SPECIFIC_PASSWORD: "twss-wqfs-vboc-esng"
         run: |
