@@ -27,7 +27,7 @@ flutter_ios_podfile_setup
 def swift_Third
   # 视图、约束布局
   pod 'SnapKit', '~> 5.6.0'
-pod 'HandyJSON'
+pod 'HandyJSON', :git => 'https://github.com/Miles-Matheson/HandyJSON.git'
 pod 'IQKeyboardManagerSwift', '~> 6.5.12'
 
 
