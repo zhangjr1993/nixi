@@ -1,0 +1,225 @@
+{
+  "" : {
+    "const-values" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/Runner-master.swiftconstvalues",
+    "dependencies" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/Runner-master.d",
+    "diagnostics" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/Runner-master.dia",
+    "emit-module-dependencies" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/Runner-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/Runner-master-emit-module.dia",
+    "swift-dependencies" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/Runner-master.swiftdeps"
+  },
+  "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/AppDelegate.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AppDelegate.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AppDelegate.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AppDelegate.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Base/BaseNavigationController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BaseNavigationController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BaseNavigationController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BaseNavigationController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Base/BaseViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BaseViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BaseViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BaseViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Base/FirstLaunchViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/FirstLaunchViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/FirstLaunchViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/FirstLaunchViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Base/ProgressHUD.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ProgressHUD.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ProgressHUD.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ProgressHUD.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Home/AvatarDetailViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AvatarDetailViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AvatarDetailViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AvatarDetailViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Home/HomeViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/HomeViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/HomeViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/HomeViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Message/MessageDetailViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MessageDetailViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MessageDetailViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MessageDetailViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Message/MessageViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MessageViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MessageViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MessageViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Profile/AboutAppViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AboutAppViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AboutAppViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AboutAppViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Profile/AboutUsViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AboutUsViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AboutUsViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AboutUsViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Profile/FeedbackViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/FeedbackViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/FeedbackViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/FeedbackViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Profile/HelpViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/HelpViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/HelpViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/HelpViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Profile/MusicPlayerViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MusicPlayerViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MusicPlayerViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MusicPlayerViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Profile/PrivacyViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/PrivacyViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/PrivacyViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/PrivacyViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Profile/ProfileViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ProfileViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ProfileViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ProfileViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Profile/UserAgreementViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/UserAgreementViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/UserAgreementViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/UserAgreementViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Square/CommunityConventionViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/CommunityConventionViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/CommunityConventionViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/CommunityConventionViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Square/SquareContentViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/SquareContentViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/SquareContentViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/SquareContentViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Square/SquareViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/SquareViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/SquareViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/SquareViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Controllers/Square/TopicDetailViewController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/TopicDetailViewController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/TopicDetailViewController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/TopicDetailViewController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Extensions/UserDefaults+Extension.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/UserDefaults+Extension.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/UserDefaults+Extension.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/UserDefaults+Extension.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Models/AIAvatar.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AIAvatar.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AIAvatar.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AIAvatar.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Models/AIAvatarResponse.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AIAvatarResponse.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AIAvatarResponse.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AIAvatarResponse.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Models/AudioModel.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AudioModel.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AudioModel.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AudioModel.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Models/AudioPlaylist.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AudioPlaylist.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AudioPlaylist.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AudioPlaylist.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Models/CategorySection.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/CategorySection.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/CategorySection.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/CategorySection.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Models/Message.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/Message.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/Message.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/Message.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Models/UserModel.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/UserModel.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/UserModel.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/UserModel.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/TabBar/MainTabBarController.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MainTabBarController.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MainTabBarController.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MainTabBarController.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Views/BackgroundBubbleView.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BackgroundBubbleView.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BackgroundBubbleView.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BackgroundBubbleView.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Views/BubbleView.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BubbleView.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BubbleView.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/BubbleView.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Views/CategoryHeaderView.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/CategoryHeaderView.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/CategoryHeaderView.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/CategoryHeaderView.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Views/Cells/AIAvatarCell.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AIAvatarCell.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AIAvatarCell.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AIAvatarCell.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Views/Cells/AvatarCollectionViewCell.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AvatarCollectionViewCell.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AvatarCollectionViewCell.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/AvatarCollectionViewCell.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Views/Cells/ChatMessageCell.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ChatMessageCell.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ChatMessageCell.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ChatMessageCell.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Views/Cells/HelpTableViewCell.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/HelpTableViewCell.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/HelpTableViewCell.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/HelpTableViewCell.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Views/Cells/MessageCell.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MessageCell.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MessageCell.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/MessageCell.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Views/Layout/WaterfallLayout.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/WaterfallLayout.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/WaterfallLayout.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/WaterfallLayout.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Views/StarryBackgroundView.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/StarryBackgroundView.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/StarryBackgroundView.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/StarryBackgroundView.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Module/Views/TopicHeaderView.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/TopicHeaderView.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/TopicHeaderView.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/TopicHeaderView.o"
+  },
+  "/Users/tmp/aichatgenie/ios/Runner/Services/ChatGLMService.swift" : {
+    "index-unit-output-path" : "/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ChatGLMService.o",
+    "llvm-bc" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ChatGLMService.bc",
+    "object" : "/Users/tmp/aichatgenie/ios/build/Runner.build/Release-iphoneos/Runner.build/Objects-normal/arm64/ChatGLMService.o"
+  }
+}
