@@ -46,8 +46,16 @@ private class ProfileTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    private let detailLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14)
+        label.textColor = .white.withAlphaComponent(0.7)
+        label.textAlignment = .right
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .default, reuseIdentifier: reuseIdentifier)
+        super.init(style: .value1, reuseIdentifier: reuseIdentifier)
         setupCell()
     }
     
@@ -64,12 +72,14 @@ private class ProfileTableViewCell: UITableViewCell {
         iconContainerView.addSubview(iconImageView)
         containerView.addSubview(titleLabel)
         containerView.addSubview(arrowImageView)
+        containerView.addSubview(detailLabel)
         
         containerView.translatesAutoresizingMaskIntoConstraints = false
         iconContainerView.translatesAutoresizingMaskIntoConstraints = false
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         arrowImageView.translatesAutoresizingMaskIntoConstraints = false
+        detailLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 4),
@@ -93,7 +103,11 @@ private class ProfileTableViewCell: UITableViewCell {
             arrowImageView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -12),
             arrowImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
             arrowImageView.widthAnchor.constraint(equalToConstant: 12),
-            arrowImageView.heightAnchor.constraint(equalToConstant: 20)
+            arrowImageView.heightAnchor.constraint(equalToConstant: 20),
+            
+            detailLabel.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
+            detailLabel.trailingAnchor.constraint(equalTo: arrowImageView.leadingAnchor, constant: -8),
+            detailLabel.leadingAnchor.constraint(greaterThanOrEqualTo: titleLabel.trailingAnchor, constant: 8)
         ])
     }
     
@@ -114,6 +128,11 @@ private class ProfileTableViewCell: UITableViewCell {
             self.containerView.transform = highlighted ? CGAffineTransform(scaleX: 0.98, y: 0.98) : .identity
         }
     }
+    
+    var detailText: String? {
+        get { detailLabel.text }
+        set { detailLabel.text = newValue }
+    }
 }
 
 class ProfileViewController: BaseViewController {
@@ -125,6 +144,7 @@ class ProfileViewController: BaseViewController {
     
     private let menuItems: [[MenuItem]] = [
         [
+            MenuItem(title: "钻石充值", icon: "diamond.fill"),
             MenuItem(title: "用户协议", icon: "doc.text.fill"),
             MenuItem(title: "隐私协议", icon: "lock.shield.fill")
         ],
@@ -202,6 +222,16 @@ class ProfileViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         setupAvatarTapGesture()
+        
+        // 添加钻石余额更新通知监听
+        NotificationCenter.default.addObserver(self,
+                                            selector: #selector(handleDiamondsUpdate),
+                                            name: .UserDiamondsDidUpdate,
+                                            object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -271,6 +301,21 @@ class ProfileViewController: BaseViewController {
     @objc private func avatarTapped() {
         // 这里可以添加显示头像详情的逻辑
     }
+    
+    @objc private func handleDiamondsUpdate() {
+        // 刷新包含钻石余额的cell
+        tableView.visibleCells.forEach { cell in
+            if let profileCell = cell as? ProfileTableViewCell,
+               let indexPath = tableView.indexPath(for: cell) {
+                let menuItem = menuItems[indexPath.section][indexPath.row]
+                if menuItem.title == "钻石充值" {
+                    if let diamonds = UserManager.shared.currentUser?.diamonds {
+                        profileCell.detailText = "\(diamonds)钻石"
+                    }
+                }
+            }
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate & UITableViewDataSource
@@ -287,6 +332,13 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ProfileTableViewCell
         let menuItem = menuItems[indexPath.section][indexPath.row]
         cell.configure(with: menuItem)
+        
+        if menuItem.title == "钻石充值" {
+            if let diamonds = UserManager.shared.currentUser?.diamonds {
+                cell.detailText = "\(diamonds)钻石"
+            }
+        }
+        
         return cell
     }
     
@@ -317,6 +369,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         let viewController: UIViewController
         
         switch menuItem.title {
+        case "钻石充值":
+            viewController = IAPViewController()
         case "用户协议":
             viewController = UserAgreementViewController()
         case "隐私协议":
