@@ -1,6 +1,7 @@
 import UIKit
 import SnapKit
 import AVFoundation
+import MediaPlayer
 
 class MusicPlayerViewController: UIViewController {
     
@@ -10,6 +11,11 @@ class MusicPlayerViewController: UIViewController {
     private var timer: Timer?
     private var playlist: AudioPlaylist
     private var isAutoPlaying: Bool = false
+    
+    // 添加音频会话属性
+    private var audioSession: AVAudioSession {
+        return AVAudioSession.sharedInstance()
+    }
     
     // MARK: - UI Components
     private lazy var backgroundImageView: UIImageView = {
@@ -151,8 +157,16 @@ class MusicPlayerViewController: UIViewController {
         setupNavigation()
         setupUI()
         setupConstraints()
+        setupAudioSession()
+        setupRemoteTransportControls()
         setupAudioPlayer()
         updateUIWithAudioModel()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        // 停止接收远程控制事件
+        UIApplication.shared.endReceivingRemoteControlEvents()
     }
     
     private func setupNavigation() {
@@ -161,6 +175,71 @@ class MusicPlayerViewController: UIViewController {
     }
     
     // MARK: - Audio Setup
+    private func setupAudioSession() {
+        do {
+            try audioSession.setCategory(.playback, mode: .default)
+            try audioSession.setActive(true)
+        } catch {
+            print("Failed to set audio session category: \(error)")
+        }
+    }
+    
+    private func setupRemoteTransportControls() {
+        // 开始接收远程控制事件
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        
+        // 配置远程控制命令中心
+        let commandCenter = MPRemoteCommandCenter.shared()
+        
+        // 播放/暂停命令
+        commandCenter.playCommand.addTarget { [weak self] _ in
+            self?.playPauseButtonTapped()
+            return .success
+        }
+        
+        commandCenter.pauseCommand.addTarget { [weak self] _ in
+            self?.playPauseButtonTapped()
+            return .success
+        }
+        
+        // 上一首/下一首命令
+        commandCenter.previousTrackCommand.addTarget { [weak self] _ in
+            self?.previousButtonTapped()
+            return .success
+        }
+        
+        commandCenter.nextTrackCommand.addTarget { [weak self] _ in
+            self?.nextButtonTapped()
+            return .success
+        }
+    }
+    
+    private func updateNowPlayingInfo() {
+        var nowPlayingInfo = [String: Any]()
+        
+        // 设置歌曲标题
+        nowPlayingInfo[MPMediaItemPropertyTitle] = audioModel.title
+        
+        // 设置艺术家
+        nowPlayingInfo[MPMediaItemPropertyArtist] = audioModel.artist
+        
+        // 设置播放时长
+        nowPlayingInfo[MPMediaItemPropertyPlaybackDuration] = audioPlayer?.duration
+        
+        // 设置当前播放位置
+        nowPlayingInfo[MPNowPlayingInfoPropertyElapsedPlaybackTime] = audioPlayer?.currentTime
+                
+        // 设置封面图片
+        if let coverImage = UIImage(named: audioModel.coverImageName) {
+            nowPlayingInfo[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(boundsSize: coverImage.size) { _ in
+                return coverImage
+            }
+        }
+        
+        // 更新锁屏界面信息
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+    }
+    
     private func setupAudioPlayer() {
         guard let path = Bundle.main.path(forResource: audioModel.localPath, ofType: nil) else {
             print("音频文件不存在: \(audioModel.localPath)")
@@ -177,6 +256,9 @@ class MusicPlayerViewController: UIViewController {
             progressSlider.addTarget(self, action: #selector(sliderValueChanged(_:)), for: .valueChanged)
             
             totalTimeLabel.text = audioModel.formattedDuration
+            
+            // 更新锁屏界面信息
+            updateNowPlayingInfo()
         } catch {
             print("音频播放器初始化失败: \(error)")
         }
@@ -241,6 +323,7 @@ class MusicPlayerViewController: UIViewController {
             playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
             startTimer()
         }
+        updateNowPlayingInfo()
     }
     
     @objc private func previousButtonTapped() {
@@ -348,6 +431,24 @@ extension MusicPlayerViewController: AVAudioPlayerDelegate {
         } else {
             playPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
             stopTimer()
+        }
+        updateNowPlayingInfo()
+    }
+    
+    func audioPlayerBeginInterruption(_ player: AVAudioPlayer) {
+        // 处理音频中断（如来电）
+        playPauseButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        stopTimer()
+        updateNowPlayingInfo()
+    }
+    
+    func audioPlayerEndInterruption(_ player: AVAudioPlayer, withOptions flags: Int) {
+        // 中断结束后恢复播放
+        if flags == AVAudioSession.InterruptionOptions.shouldResume.rawValue {
+            player.play()
+            playPauseButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+            startTimer()
+            updateNowPlayingInfo()
         }
     }
 } 
