@@ -37,15 +37,15 @@ jobs:
       #     rm -f Podfile.lock
       #     pod install --repo-update
           
-      # 添加详细的环境信息调试步骤
-      # - name: Print Environment Info
-      #   run: |
-      #     echo "============= Environment Variables ============="
-      #     echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
-      #     FLUTTER_ROOT=$(which flutter | xargs dirname | xargs dirname)
-      #     echo "FLUTTER_ROOT: $FLUTTER_ROOT"
-      #     echo "FLUTTER_APPLICATION_PATH: $GITHUB_WORKSPACE"
-      #     echo "Current Directory: $(pwd)"
+#       添加详细的环境信息调试步骤
+      - name: Print Environment Info
+        run: |
+          echo "============= Environment Variables ============="
+          echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+          FLUTTER_ROOT=$(which flutter | xargs dirname | xargs dirname)
+          echo "FLUTTER_ROOT: $FLUTTER_ROOT"
+          echo "FLUTTER_APPLICATION_PATH: $GITHUB_WORKSPACE"
+          echo "Current Directory: $(pwd)"
       # 打印 Xcode 版本信息
       - name: Print Xcode Version
         run: |
