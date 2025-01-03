@@ -15,7 +15,7 @@ class PrivacyViewController: BaseViewController {
 
 更新日期：2024年3月20日
 
-感谢您使用 AIChatGenie！我们非常重视您的隐私保护。本隐私政策旨在向您说明我们如何收集、使用和保护您的个人信息。请您仔细阅读以下内容：
+感谢您使用 觅喜！我们非常重视您的隐私保护。本隐私政策旨在向您说明我们如何收集、使用和保护您的个人信息。请您仔细阅读以下内容：
 
 1. 信息收集
 我们可能收集以下信息：
@@ -63,7 +63,7 @@ class PrivacyViewController: BaseViewController {
 
 9. 联系我们
 如有任何问题或建议，请通过以下方式联系我们：
-邮箱：support@aichatgenie.com
+邮箱：happym1224@163.com
 
 继续使用我们的服务，即表示您同意本隐私政策的所有条款。
 """

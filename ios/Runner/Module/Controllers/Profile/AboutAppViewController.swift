@@ -15,7 +15,7 @@ class AboutAppViewController: BaseViewController {
         label.textColor = .white
         label.font = .systemFont(ofSize: 24, weight: .semibold)
         label.textAlignment = .center
-        label.text = "AIChatGenie"
+        label.text = "觅喜"
         return label
     }()
     
@@ -24,7 +24,7 @@ class AboutAppViewController: BaseViewController {
         label.textColor = .white
         label.font = .systemFont(ofSize: 16)
         label.textAlignment = .center
-        label.text = "版本号：1.0.0"
+        label.text = "版本号：1.0"
         return label
     }()
     

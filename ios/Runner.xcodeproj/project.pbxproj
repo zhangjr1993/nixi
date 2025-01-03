@@ -14,11 +14,8 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
-		AE2C499A2D262C120073AB85 /* IAPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C49992D262C120073AB85 /* IAPViewController.swift */; };
 		AE2C499D2D262C270073AB85 /* IAPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C499B2D262C270073AB85 /* IAPProduct.swift */; };
 		AE2C499E2D262C270073AB85 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C499C2D262C270073AB85 /* User.swift */; };
-		AE2C49A02D262C4B0073AB85 /* IAPProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C499F2D262C4B0073AB85 /* IAPProductCell.swift */; };
-		AE2C49A32D26342F0073AB85 /* IAPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C49A22D26342F0073AB85 /* IAPManager.swift */; };
 		AEB0B4BC2D1BFA8700D82D60 /* ChatGLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B47C2D1BFA8600D82D60 /* ChatGLMService.swift */; };
 		AEB0B4BD2D1BFA8700D82D60 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B47F2D1BFA8600D82D60 /* MainTabBarController.swift */; };
 		AEB0B4BE2D1BFA8700D82D60 /* AIAvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B4812D1BFA8600D82D60 /* AIAvatarResponse.swift */; };
@@ -101,11 +98,8 @@
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AE2C49992D262C120073AB85 /* IAPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPViewController.swift; sourceTree = "<group>"; };
 		AE2C499B2D262C270073AB85 /* IAPProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPProduct.swift; sourceTree = "<group>"; };
 		AE2C499C2D262C270073AB85 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		AE2C499F2D262C4B0073AB85 /* IAPProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPProductCell.swift; sourceTree = "<group>"; };
-		AE2C49A22D26342F0073AB85 /* IAPManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPManager.swift; sourceTree = "<group>"; };
 		AEB0B47C2D1BFA8600D82D60 /* ChatGLMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGLMService.swift; sourceTree = "<group>"; };
 		AEB0B47F2D1BFA8600D82D60 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AEB0B4812D1BFA8600D82D60 /* AIAvatarResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIAvatarResponse.swift; sourceTree = "<group>"; };
@@ -237,22 +231,6 @@
 			path = Runner;
 			sourceTree = "<group>";
 		};
-		AE2C49982D262C120073AB85 /* IAP */ = {
-			isa = PBXGroup;
-			children = (
-				AE2C49992D262C120073AB85 /* IAPViewController.swift */,
-			);
-			path = IAP;
-			sourceTree = "<group>";
-		};
-		AE2C49A12D26342F0073AB85 /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-				AE2C49A22D26342F0073AB85 /* IAPManager.swift */,
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
 		AEB0B47B2D1BFA8600D82D60 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,7 +242,6 @@
 		AEB0B47D2D1BFA8600D82D60 /* Module */ = {
 			isa = PBXGroup;
 			children = (
-				AE2C49A12D26342F0073AB85 /* Managers */,
 				AEB0B47E2D1BFA8600D82D60 /* TabBar */,
 				AEB0B4802D1BFA8600D82D60 /* Models */,
 				AEB0B4882D1BFA8700D82D60 /* Extensions */,
@@ -325,7 +302,6 @@
 		AEB0B4912D1BFA8700D82D60 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AE2C49982D262C120073AB85 /* IAP */,
 				AEB0B4922D1BFA8700D82D60 /* Home */,
 				AEB0B4952D1BFA8700D82D60 /* Square */,
 				AEB0B49A2D1BFA8700D82D60 /* Message */,
@@ -395,7 +371,6 @@
 				AEB0B4B22D1BFA8700D82D60 /* StarryBackgroundView.swift */,
 				AEB0B4B32D1BFA8700D82D60 /* BubbleView.swift */,
 				AEB0B4B42D1BFA8700D82D60 /* CategoryHeaderView.swift */,
-				AE2C499F2D262C4B0073AB85 /* IAPProductCell.swift */,
 				AEB0B4B52D1BFA8700D82D60 /* TopicHeaderView.swift */,
 				AEB0B4B62D1BFA8700D82D60 /* BackgroundBubbleView.swift */,
 			);
@@ -593,7 +568,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE2C49A32D26342F0073AB85 /* IAPManager.swift in Sources */,
 				AEB0B4BE2D1BFA8700D82D60 /* AIAvatarResponse.swift in Sources */,
 				AEB0B4DA2D1BFA8700D82D60 /* AboutUsViewController.swift in Sources */,
 				AEB0B4E82D1BFA8700D82D60 /* BackgroundBubbleView.swift in Sources */,
@@ -601,7 +575,6 @@
 				AEB0B4DE2D1BFA8700D82D60 /* AIAvatarCell.swift in Sources */,
 				AEB0B4E62D1BFA8700D82D60 /* CategoryHeaderView.swift in Sources */,
 				AEB0B4E92D1BFA8700D82D60 /* BaseViewController.swift in Sources */,
-				AE2C499A2D262C120073AB85 /* IAPViewController.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				AEB0B4D72D1BFA8700D82D60 /* AboutAppViewController.swift in Sources */,
 				AEB0B4C12D1BFA8700D82D60 /* UserModel.swift in Sources */,
@@ -618,7 +591,6 @@
 				AEB0B4EB2D1BFA8700D82D60 /* ProgressHUD.swift in Sources */,
 				AE2C499E2D262C270073AB85 /* User.swift in Sources */,
 				AEB0B4CF2D1BFA8700D82D60 /* SquareViewController.swift in Sources */,
-				AE2C49A02D262C4B0073AB85 /* IAPProductCell.swift in Sources */,
 				AEB0B4D92D1BFA8700D82D60 /* ProfileViewController.swift in Sources */,
 				AEB0B4CD2D1BFA8700D82D60 /* HomeViewController.swift in Sources */,
 				AEB0B4BD2D1BFA8700D82D60 /* MainTabBarController.swift in Sources */,
@@ -726,8 +698,8 @@
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/runner/work/nixi/nixi;
-				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.24.4-stable/arm64";
+				FLUTTER_APPLICATION_PATH = /Users/tmp/aichatgenie;
+				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -867,8 +839,8 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = J28N784UX7;
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/runner/work/nixi/nixi;
-				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.24.4-stable/arm64";
+				FLUTTER_APPLICATION_PATH = /Users/tmp/aichatgenie;
+				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -904,8 +876,8 @@
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = J28N784UX7;
 				ENABLE_BITCODE = NO;
-				FLUTTER_APPLICATION_PATH = /Users/runner/work/nixi/nixi;
-				FLUTTER_ROOT = "/Users/runner/hostedtoolcache/flutter/3.24.4-stable/arm64";
+				FLUTTER_APPLICATION_PATH = /Users/tmp/aichatgenie;
+				FLUTTER_ROOT = /Users/tmp/Desktop/flutter;
 				INFOPLIST_FILE = Runner/Info.plist;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
