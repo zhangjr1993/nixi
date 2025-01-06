@@ -247,6 +247,22 @@ class MessageDetailViewController: BaseViewController {
         guard let message = inputTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines),
               !message.isEmpty else { return }
         
+        // 检查用户钻石余额
+        guard let currentUser = UserManager.shared.currentUser else { return }
+        
+        if currentUser.diamonds <= 0 {
+            // 显示充值页面
+            let iapVC = IAPViewController()
+            let nav = UINavigationController(rootViewController: iapVC)
+            present(nav, animated: true)
+            return
+        }
+        
+        // 扣除钻石
+        UserManager.shared.updateDiamonds(currentUser.diamonds - 1)
+        // 通知其他页面更新用户余额
+        NotificationCenter.default.post(name: .UserDiamondsDidUpdate, object: nil)
+        
         // 原有的发送消息逻辑
         let newMessage = Message(content: message, type: .sent)
         messages.append(newMessage)

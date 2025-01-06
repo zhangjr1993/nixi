@@ -144,6 +144,7 @@ class ProfileViewController: BaseViewController {
     
     private let menuItems: [[MenuItem]] = [
         [
+            MenuItem(title: "钻石充值", icon: "cart.fill"),
             MenuItem(title: "用户协议", icon: "doc.text.fill"),
             MenuItem(title: "隐私协议", icon: "lock.shield.fill")
         ],
@@ -221,6 +222,11 @@ class ProfileViewController: BaseViewController {
         super.viewDidLoad()
         setupUI()
         setupAvatarTapGesture()
+        // 添加钻石余额更新通知监听
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(handleDiamondsUpdate),
+                                               name: .UserDiamondsDidUpdate,
+                                               object: nil)
     }
     
     deinit {
@@ -362,6 +368,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         let viewController: UIViewController
         
         switch menuItem.title {
+        case "钻石充值":
+            viewController = IAPViewController()
         case "用户协议":
             viewController = UserAgreementViewController()
         case "隐私协议":
