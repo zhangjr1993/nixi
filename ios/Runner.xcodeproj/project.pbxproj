@@ -19,6 +19,7 @@
 		AE1EBF8C2D2B696000A96443 /* IAPProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1EBF892D2B696000A96443 /* IAPProductCell.swift */; };
 		AE2C499D2D262C270073AB85 /* IAPProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C499B2D262C270073AB85 /* IAPProduct.swift */; };
 		AE2C499E2D262C270073AB85 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2C499C2D262C270073AB85 /* User.swift */; };
+		AE5A37A72D2BAF09005E16DD /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE5A37A62D2BAF09005E16DD /* StoreKit.framework */; };
 		AEB0B4BC2D1BFA8700D82D60 /* ChatGLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B47C2D1BFA8600D82D60 /* ChatGLMService.swift */; };
 		AEB0B4BD2D1BFA8700D82D60 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B47F2D1BFA8600D82D60 /* MainTabBarController.swift */; };
 		AEB0B4BE2D1BFA8700D82D60 /* AIAvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B4812D1BFA8600D82D60 /* AIAvatarResponse.swift */; };
@@ -106,6 +107,7 @@
 		AE1EBF892D2B696000A96443 /* IAPProductCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPProductCell.swift; sourceTree = "<group>"; };
 		AE2C499B2D262C270073AB85 /* IAPProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPProduct.swift; sourceTree = "<group>"; };
 		AE2C499C2D262C270073AB85 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AE5A37A62D2BAF09005E16DD /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AEB0B47C2D1BFA8600D82D60 /* ChatGLMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatGLMService.swift; sourceTree = "<group>"; };
 		AEB0B47F2D1BFA8600D82D60 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		AEB0B4812D1BFA8600D82D60 /* AIAvatarResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIAvatarResponse.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CA4A0A54F2D6DD8732072CF /* Pods_Runner.framework in Frameworks */,
+				AE5A37A72D2BAF09005E16DD /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +177,7 @@
 		5258F8611E28AD455051B504 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE5A37A62D2BAF09005E16DD /* StoreKit.framework */,
 				35783B1DE44D56D3D05B5458 /* Pods_Runner.framework */,
 			);
 			name = Frameworks;

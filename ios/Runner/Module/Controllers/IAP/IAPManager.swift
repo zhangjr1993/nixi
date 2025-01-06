@@ -182,4 +182,4 @@ extension IAPManager: SKPaymentTransactionObserver {
         // 恢复购买失败，继续创建新的购买
         purchaseCompletion?(.failure(.unknown))
     }
-} 
+}
