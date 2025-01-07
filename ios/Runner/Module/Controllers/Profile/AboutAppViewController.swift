@@ -15,7 +15,7 @@ class AboutAppViewController: BaseViewController {
         label.textColor = .white
         label.font = .systemFont(ofSize: 24, weight: .semibold)
         label.textAlignment = .center
-        label.text = "觅喜"
+        label.text = "轻甜"
         return label
     }()
     

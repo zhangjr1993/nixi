@@ -11,12 +11,12 @@ class UserAgreementViewController: BaseViewController {
         textView.automaticallyAdjustsScrollIndicatorInsets = false
         textView.contentOffset = .zero
         textView.text = """
-                觅喜用户协议
+                轻甜用户协议
 
-        欢迎使用觅喜！请您仔细阅读以下条款，使用我们的服务即表示您同意接受以下所有条款。
+        欢迎使用轻甜！请您仔细阅读以下条款，使用我们的服务即表示您同意接受以下所有条款。
 
         1. 服务条款
-        1.1 觅喜是一款基于人工智能的对话应用，为用户提供AI对话服务。
+        1.1 轻甜是一款基于人工智能的对话应用，为用户提供AI对话服务。
         1.2 您需要确保您具有完全民事行为能力来使用本服务。
         1.3 我们保留随时修改或中断服务的权利，恕不另行通知。
 
@@ -32,7 +32,7 @@ class UserAgreementViewController: BaseViewController {
         3.3 未经您的同意，我们不会向第三方披露您的个人信息。
 
         4. 知识产权
-        4.1 觅喜及其相关的所有知识产权均归我们所有。
+        4.1 轻甜及其相关的所有知识产权均归我们所有。
         4.2 用户在使用过程中产生的内容，其知识产权归属将根据具体情况而定。
         4.3 未经授权，禁止对本应用进行复制、修改、传播或用于商业用途。
 
@@ -54,7 +54,7 @@ class UserAgreementViewController: BaseViewController {
         8. 其他
         8.1 本协议受中华人民共和国法律管辖。
         8.2 如本协议的任何条款无效，不影响其他条款的效力。
-        8.3 本协议的最终解释权归觅喜所有。
+        8.3 本协议的最终解释权归轻甜所有。
 
         最后更新日期：2024年3月
         """

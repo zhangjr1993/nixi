@@ -26,7 +26,7 @@ class AboutUsViewController: BaseViewController {
         label.textColor = .white
         label.font = .boldSystemFont(ofSize: 24)
         label.textAlignment = .center
-        label.text = "觅喜-AI虚拟伙伴"
+        label.text = "轻甜-AI虚拟伙伴"
         return label
     }()
     
@@ -36,7 +36,7 @@ class AboutUsViewController: BaseViewController {
         label.font = .systemFont(ofSize: 16)
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = "觅喜是一款创新的AI虚拟角色陪伴聊天应用，致力于为用户提供智能、有趣且丰富的交互体验。"
+        label.text = "轻甜是一款创新的AI虚拟角色陪伴聊天应用，致力于为用户提供智能、有趣且丰富的交互体验。"
         return label
     }()
     
