@@ -200,7 +200,7 @@ class MusicPlayerViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if UserDefaults.showAudioAlert {
+        if !UserDefaults.showAudioAlert {
             UserDefaults.showAudioAlert = true
             // 显示版权声明
             let copyrightAlert = CopyrightAlertView(frame: view.bounds)
