@@ -29,8 +29,8 @@ class IAPManager: NSObject {
     static let shared = IAPManager()
     
     private var products: [SKProduct] = []
-    private var productsCompletion: ((Result<SKProduct, IAPError>) -> Void)?
-    private var purchaseCompletion: ((Result<Bool, IAPError>) -> Void)?
+    var productsCompletion: ((Result<SKProduct, IAPError>) -> Void)?
+    var purchaseCompletion: ((Result<Bool, IAPError>) -> Void)?
     
     private override init() {
         super.init()

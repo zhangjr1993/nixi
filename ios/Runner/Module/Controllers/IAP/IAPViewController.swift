@@ -104,6 +104,11 @@ class IAPViewController: UIViewController {
                                             selector: #selector(handlePurchaseSuccess), 
                                             name: .IAPPurchaseSuccess, 
                                             object: nil)
+        
+        IAPManager.shared.purchaseCompletion = { [weak self] result in
+            guard let `self` = self else { return }
+            
+        }
     }
     
     deinit {

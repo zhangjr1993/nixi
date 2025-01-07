@@ -78,9 +78,28 @@ class MusicPlayerViewController: UIViewController {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.text = "音频由AI生成，禁止利用从事违法活动"
-        label.textColor = .white.withAlphaComponent(0.9)
+        label.textColor = .white
         label.font = .systemFont(ofSize: 14)
         label.textAlignment = .center
+        
+        // 添加背景视图
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        backgroundView.layer.cornerRadius = 8
+        label.addSubview(backgroundView)
+        backgroundView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(-8)
+        }
+        
+        // 确保文本在背景之上
+        label.layer.zPosition = 1
+        
+        // 添加阴影效果
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowOffset = CGSize(width: 0, height: 1)
+        label.layer.shadowRadius = 2
+        label.layer.shadowOpacity = 0.5
+        
         return label
     }()
     
@@ -176,6 +195,18 @@ class MusicPlayerViewController: UIViewController {
         super.viewWillDisappear(animated)
         // 停止接收远程控制事件
         UIApplication.shared.endReceivingRemoteControlEvents()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if UserDefaults.showAudioAlert {
+            UserDefaults.showAudioAlert = true
+            // 显示版权声明
+            let copyrightAlert = CopyrightAlertView(frame: view.bounds)
+            view.addSubview(copyrightAlert)
+        }
+        
     }
     
     private func setupNavigation() {
@@ -421,9 +452,9 @@ class MusicPlayerViewController: UIViewController {
         }
         
         subtitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(artistLabel.snp.bottom).offset(10)
-            make.left.right.equalToSuperview().inset(20)
-            make.height.equalTo(20)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(8)
+            make.centerX.equalToSuperview()
+            make.left.right.equalToSuperview().inset(40)
         }
         
         controlsStackView.snp.makeConstraints { make in
