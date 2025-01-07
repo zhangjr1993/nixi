@@ -48,7 +48,7 @@ private class ProfileTableViewCell: UITableViewCell {
     
     private let detailLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 14)
+        label.font = .systemFont(ofSize: 13)
         label.textColor = .white.withAlphaComponent(0.7)
         label.textAlignment = .right
         return label
@@ -205,6 +205,15 @@ class ProfileViewController: BaseViewController {
         return label
     }()
     
+    private lazy var membershipLabel: UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 14)
+        label.textColor = .white.withAlphaComponent(0.7)
+        label.textAlignment = .center
+        label.isHidden = true // 默认隐藏
+        return label
+    }()
+    
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)
         table.delegate = self
@@ -236,6 +245,7 @@ class ProfileViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        updateMembershipStatus()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -250,6 +260,7 @@ class ProfileViewController: BaseViewController {
         // 设置headerView
         headerView.addSubview(avatarImageView)
         headerView.addSubview(nicknameLabel)
+        headerView.addSubview(membershipLabel)
         
         // 设置tableView
         tableView.tableHeaderView = headerView
@@ -258,6 +269,7 @@ class ProfileViewController: BaseViewController {
         // 设置约束
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         nicknameLabel.translatesAutoresizingMaskIntoConstraints = false
+        membershipLabel.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -267,11 +279,17 @@ class ProfileViewController: BaseViewController {
             avatarImageView.widthAnchor.constraint(equalToConstant: avatarSize),
             avatarImageView.heightAnchor.constraint(equalToConstant: avatarSize),
             
-            // 昵称约束 - 调整与头像的间距
-            nicknameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 16),
+            // 昵称约束 - 减小与头像的间距
+            nicknameLabel.topAnchor.constraint(equalTo: avatarImageView.bottomAnchor, constant: 12),
             nicknameLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
             nicknameLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
             nicknameLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20),
+            
+            // 会员标签约束
+            membershipLabel.topAnchor.constraint(equalTo: nicknameLabel.bottomAnchor, constant: 8),
+            membershipLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
+            membershipLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
+            membershipLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20),
             
             // 表格约束
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -313,6 +331,20 @@ class ProfileViewController: BaseViewController {
                     }
                 }
             }
+        }
+    }
+    
+    // 添加更新会员状态的方法
+    private func updateMembershipStatus() {
+        if let user = UserManager.shared.currentUser, user.isMembershipValid {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy年MM月dd日"
+            if let expiryDate = user.membershipExpiryDate {
+                membershipLabel.text = "会员有效期：\(dateFormatter.string(from: expiryDate))"
+                membershipLabel.isHidden = false
+            }
+        } else {
+            membershipLabel.isHidden = true
         }
     }
 }

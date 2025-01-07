@@ -25,6 +25,14 @@ class IAPViewController: UIViewController {
         }
     }
     
+    private lazy var membershipLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = .systemFont(ofSize: 14)
+        label.numberOfLines = 0
+        return label
+    }()
+    
     // MARK: - UI Components
     private lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .insetGrouped)
@@ -110,12 +118,14 @@ class IAPViewController: UIViewController {
         view.addSubview(balanceView)
         balanceView.addSubview(balanceLabel)
         balanceView.addSubview(diamondsLabel)
+        balanceView.addSubview(membershipLabel)
         view.addSubview(tableView)
         view.addSubview(purchaseButton)
         
         balanceView.translatesAutoresizingMaskIntoConstraints = false
         balanceLabel.translatesAutoresizingMaskIntoConstraints = false
         diamondsLabel.translatesAutoresizingMaskIntoConstraints = false
+        membershipLabel.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         purchaseButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -123,13 +133,18 @@ class IAPViewController: UIViewController {
             balanceView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             balanceView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             balanceView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            balanceView.heightAnchor.constraint(equalToConstant: 60),
+            balanceView.heightAnchor.constraint(greaterThanOrEqualToConstant: 90),
             
+            balanceLabel.topAnchor.constraint(equalTo: balanceView.topAnchor, constant: 16),
             balanceLabel.leadingAnchor.constraint(equalTo: balanceView.leadingAnchor, constant: 16),
-            balanceLabel.centerYAnchor.constraint(equalTo: balanceView.centerYAnchor),
             
+            diamondsLabel.centerYAnchor.constraint(equalTo: balanceLabel.centerYAnchor),
             diamondsLabel.leadingAnchor.constraint(equalTo: balanceLabel.trailingAnchor, constant: 8),
-            diamondsLabel.centerYAnchor.constraint(equalTo: balanceView.centerYAnchor),
+            
+            membershipLabel.topAnchor.constraint(equalTo: balanceLabel.bottomAnchor, constant: 12),
+            membershipLabel.leadingAnchor.constraint(equalTo: balanceView.leadingAnchor, constant: 16),
+            membershipLabel.trailingAnchor.constraint(equalTo: balanceView.trailingAnchor, constant: -16),
+            membershipLabel.bottomAnchor.constraint(equalTo: balanceView.bottomAnchor, constant: -16),
             
             tableView.topAnchor.constraint(equalTo: balanceView.bottomAnchor, constant: 16),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -141,6 +156,8 @@ class IAPViewController: UIViewController {
             purchaseButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             purchaseButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+        
+        updateMembershipStatus()
     }
     
     
@@ -148,22 +165,62 @@ class IAPViewController: UIViewController {
     @objc private func purchaseButtonTapped() {
         guard let product = selectedProduct, !isProcessingPayment else { return }
         
-        // 检查是否可以购买
-        if SKPaymentQueue.canMakePayments() {
-            // 开始购买，设置状态
-            isProcessingPayment = true
-            
-            // 通过productId发起购买
-            Task {
-                do {
-                    try await IAPManager.shared.startPayment(productId: product.productId)
-                    // 购买成功后会通过通知更新UI
-                } catch {
-                    handlePurchaseFailure(error: error)
+        // 开始购买，设置状态
+        isProcessingPayment = true
+        
+        Task {
+            do {
+                // 先获取商品信息
+                let products = try await IAPManager.shared.loadProducts()
+                guard let skProduct = products.first(where: { $0.productIdentifier == product.productId }) else {
+                    throw IAPError.productNotFound
                 }
+                
+                // 显示确认购买弹窗
+                let shouldProceed = await showPurchaseConfirmation(for: skProduct)
+                guard shouldProceed else {
+                    isProcessingPayment = false
+                    return
+                }
+                
+                // 商品信息获取成功后开始购买
+                try await IAPManager.shared.startPayment(productId: product.productId)
+                // 购买成功后会通过通知更新UI
+            } catch let error as IAPError {
+                // 处理具体的错误
+                handlePurchaseFailure(error: error)
+            } catch {
+                // 处理其他错误
+                handlePurchaseFailure(error: IAPError.unknown)
             }
-        } else {
-            showAlert(title: "错误", message: "您的设备不支持应用内购买")
+        }
+    }
+    
+    // 添加确认购买的方法
+    private func showPurchaseConfirmation(for product: SKProduct) async -> Bool {
+        return await withCheckedContinuation { continuation in
+            DispatchQueue.main.async {
+                let formatter = NumberFormatter()
+                formatter.numberStyle = .currency
+                formatter.locale = product.priceLocale
+                let price = formatter.string(from: product.price) ?? "\(product.price)"
+                
+                let alert = UIAlertController(
+                    title: "确认购买",
+                    message: "您确定要购买 \(product.localizedTitle) 吗？价格：\(price)",
+                    preferredStyle: .alert
+                )
+                
+                alert.addAction(UIAlertAction(title: "取消", style: .cancel) { _ in
+                    continuation.resume(returning: false)
+                })
+                
+                alert.addAction(UIAlertAction(title: "确认", style: .default) { _ in
+                    continuation.resume(returning: true)
+                })
+                
+                self.present(alert, animated: true)
+            }
         }
     }
     
@@ -173,9 +230,24 @@ class IAPViewController: UIViewController {
             diamondsLabel.text = "\(diamonds)钻石"
         }
         
+        // 处理会员有效期
+        if let product = selectedProduct {
+            switch product.productId {
+            case "com.nixi.mf.zuanshi88", "com.nixi.m.zuanshi98":
+                UserManager.shared.extendMembership(by: 30)
+            case "com.nixi.m.zuanshi268":
+                UserManager.shared.extendMembership(by: 90)
+            default:
+                break
+            }
+        }
+        
+        // 更新会员状态显示
+        updateMembershipStatus()
+        
         // 重置选中状态
         selectedProduct = nil
-        isProcessingPayment = false  // 这会触发updatePurchaseButtonState
+        isProcessingPayment = false
         
         // 刷新所有可见的单元格以更新选中状态
         tableView.visibleCells.forEach { cell in
@@ -184,24 +256,17 @@ class IAPViewController: UIViewController {
             }
         }
         
-        // 通知其他页面更新用户余额
-        NotificationCenter.default.post(name: .UserDiamondsDidUpdate, object: nil)
+         
         
         // 显示成功提示
         showAlert(title: "购买成功", message: "钻石已到账")
     }
     
-    private func handlePurchaseFailure(error: Error) {
-        isProcessingPayment = false
-        
-        let errorMessage: String
-        if let iapError = error as? IAPError {
-            errorMessage = iapError.localizedDescription
-        } else {
-            errorMessage = error.localizedDescription
+    private func handlePurchaseFailure(error: IAPError) {
+        DispatchQueue.main.async {
+            self.isProcessingPayment = false
+            self.showAlert(title: "购买失败", message: error.localizedDescription)
         }
-        
-        showAlert(title: "购买失败", message: errorMessage)
     }
     
     private func showAlert(title: String, message: String, completion: (() -> Void)? = nil) {
@@ -237,6 +302,18 @@ class IAPViewController: UIViewController {
         
         purchaseButton.backgroundColor = selectedProduct != nil && !isProcessingPayment ? 
             .systemBlue : .systemBlue.withAlphaComponent(0.5)
+    }
+    
+    private func updateMembershipStatus() {
+        if let user = UserManager.shared.currentUser {
+            if let expiryDate = user.membershipExpiryDate {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "yyyy年MM月dd日"
+                membershipLabel.text = "会员有效期至 \(dateFormatter.string(from: expiryDate))"
+            } else {
+                membershipLabel.text = "开通会员后，有效期内无限畅聊"
+            }
+        }
     }
 }
 

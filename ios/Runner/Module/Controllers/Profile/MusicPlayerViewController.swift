@@ -75,6 +75,15 @@ class MusicPlayerViewController: UIViewController {
         return label
     }()
     
+    private lazy var subtitleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "音频由AI生成，禁止利用从事违法活动"
+        label.textColor = .white.withAlphaComponent(0.9)
+        label.font = .systemFont(ofSize: 14)
+        label.textAlignment = .center
+        return label
+    }()
+    
     private lazy var controlsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
@@ -366,6 +375,7 @@ class MusicPlayerViewController: UIViewController {
         view.addSubview(progressSlider)
         view.addSubview(currentTimeLabel)
         view.addSubview(totalTimeLabel)
+        view.addSubview(subtitleLabel)
         
         controlsStackView.addArrangedSubview(previousButton)
         controlsStackView.addArrangedSubview(playPauseButton)
@@ -408,6 +418,12 @@ class MusicPlayerViewController: UIViewController {
         totalTimeLabel.snp.makeConstraints { make in
             make.right.equalTo(progressSlider)
             make.top.equalTo(progressSlider.snp.bottom).offset(8)
+        }
+        
+        subtitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(artistLabel.snp.bottom).offset(10)
+            make.left.right.equalToSuperview().inset(20)
+            make.height.equalTo(20)
         }
         
         controlsStackView.snp.makeConstraints { make in

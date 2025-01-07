@@ -43,6 +43,11 @@ class IAPManager: NSObject {
     }
     
     func loadProducts() async throws -> [SKProduct] {
+        // 如果已经有缓存的商品信息，直接返回
+        if !self.products.isEmpty {
+            return self.products
+        }
+        
         let productIds = Set(IAPProduct.allProducts.map { $0.productId })
         
         return try await withCheckedThrowingContinuation { continuation in
@@ -52,7 +57,12 @@ class IAPManager: NSObject {
             self.productsCompletion = { result in
                 switch result {
                 case .success(let product):
-                    continuation.resume(returning: [product])
+                    // 这里不应该只返回一个商品
+                    if !self.products.isEmpty {
+                        continuation.resume(returning: self.products)
+                    } else {
+                        continuation.resume(throwing: IAPError.productNotFound)
+                    }
                 case .failure(let error):
                     continuation.resume(throwing: error)
                 }
@@ -63,7 +73,6 @@ class IAPManager: NSObject {
     }
     
     func startPayment(productId: String) async throws {
-        // 1. 先检查是否有未完成的交易
         return try await withCheckedThrowingContinuation { continuation in
             self.purchaseCompletion = { result in
                 switch result {
@@ -74,34 +83,12 @@ class IAPManager: NSObject {
                 }
             }
             
-            // 先尝试恢复购买
-            SKPaymentQueue.default().restoreCompletedTransactions()
-            
-            // 在恢复完成后，如果没有相关交易，则创建新的购买
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-                guard let self = self else { return }
-                
-                // 查找对应的SKProduct
-                if let product = self.products.first(where: { $0.productIdentifier == productId }) {
-                    // 创建新的购买
-                    let payment = SKPayment(product: product)
-                    SKPaymentQueue.default().add(payment)
-                } else {
-                    // 如果找不到产品，重新加载产品信息
-                    Task {
-                        do {
-                            let products = try await self.loadProducts()
-                            if let product = products.first(where: { $0.productIdentifier == productId }) {
-                                let payment = SKPayment(product: product)
-                                SKPaymentQueue.default().add(payment)
-                            } else {
-                                self.purchaseCompletion?(.failure(.productNotFound))
-                            }
-                        } catch {
-                            self.purchaseCompletion?(.failure(.unknown))
-                        }
-                    }
-                }
+            // 直接创建支付，因为商品信息已经在之前验证过了
+            if let product = self.products.first(where: { $0.productIdentifier == productId }) {
+                let payment = SKPayment(product: product)
+                SKPaymentQueue.default().add(payment)
+            } else {
+                self.purchaseCompletion?(.failure(.productNotFound))
             }
         }
     }
@@ -128,9 +115,9 @@ class IAPManager: NSObject {
 extension IAPManager: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         DispatchQueue.main.async {
-            if let product = response.products.first {
+            if !response.products.isEmpty {
                 self.products = response.products
-                self.productsCompletion?(.success(product))
+                self.productsCompletion?(.success(response.products[0])) // 这里传任意产品都可以，因为我们在 completion 中会返回 self.products
             } else {
                 self.productsCompletion?(.failure(.productNotFound))
             }

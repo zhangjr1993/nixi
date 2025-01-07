@@ -25,7 +25,6 @@
 		AEB0B4BE2D1BFA8700D82D60 /* AIAvatarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B4812D1BFA8600D82D60 /* AIAvatarResponse.swift */; };
 		AEB0B4BF2D1BFA8700D82D60 /* AudioPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B4822D1BFA8600D82D60 /* AudioPlaylist.swift */; };
 		AEB0B4C02D1BFA8700D82D60 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B4832D1BFA8700D82D60 /* Message.swift */; };
-		AEB0B4C12D1BFA8700D82D60 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B4842D1BFA8700D82D60 /* UserModel.swift */; };
 		AEB0B4C22D1BFA8700D82D60 /* AIAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B4852D1BFA8700D82D60 /* AIAvatar.swift */; };
 		AEB0B4C32D1BFA8700D82D60 /* AudioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B4862D1BFA8700D82D60 /* AudioModel.swift */; };
 		AEB0B4C42D1BFA8700D82D60 /* CategorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB0B4872D1BFA8700D82D60 /* CategorySection.swift */; };
@@ -113,7 +112,6 @@
 		AEB0B4812D1BFA8600D82D60 /* AIAvatarResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIAvatarResponse.swift; sourceTree = "<group>"; };
 		AEB0B4822D1BFA8600D82D60 /* AudioPlaylist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlaylist.swift; sourceTree = "<group>"; };
 		AEB0B4832D1BFA8700D82D60 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		AEB0B4842D1BFA8700D82D60 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		AEB0B4852D1BFA8700D82D60 /* AIAvatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AIAvatar.swift; sourceTree = "<group>"; };
 		AEB0B4862D1BFA8700D82D60 /* AudioModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioModel.swift; sourceTree = "<group>"; };
 		AEB0B4872D1BFA8700D82D60 /* CategorySection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySection.swift; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 				AEB0B4812D1BFA8600D82D60 /* AIAvatarResponse.swift */,
 				AEB0B4822D1BFA8600D82D60 /* AudioPlaylist.swift */,
 				AEB0B4832D1BFA8700D82D60 /* Message.swift */,
-				AEB0B4842D1BFA8700D82D60 /* UserModel.swift */,
 				AEB0B4852D1BFA8700D82D60 /* AIAvatar.swift */,
 				AEB0B4862D1BFA8700D82D60 /* AudioModel.swift */,
 				AEB0B4872D1BFA8700D82D60 /* CategorySection.swift */,
@@ -598,7 +595,6 @@
 				AEB0B4E92D1BFA8700D82D60 /* BaseViewController.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
 				AEB0B4D72D1BFA8700D82D60 /* AboutAppViewController.swift in Sources */,
-				AEB0B4C12D1BFA8700D82D60 /* UserModel.swift in Sources */,
 				AE1EBF8C2D2B696000A96443 /* IAPProductCell.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 				AEB0B4C32D1BFA8700D82D60 /* AudioModel.swift in Sources */,
@@ -719,7 +715,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FLUTTER_APPLICATION_PATH = /Users/runner/work/nixi/nixi;
@@ -859,7 +855,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = J28N784UX7;
 				ENABLE_BITCODE = NO;
@@ -896,7 +892,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = J28N784UX7;
 				ENABLE_BITCODE = NO;
